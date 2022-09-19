@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 
+
+
 //1. 인풋에 연결한 순서 기억 
 //2. 연결 해제시 마지막으로 연결한 인풋을 아웃풋으로 설정
 //3. 기본 아웃풋값은 1번 인풋
@@ -15,13 +17,13 @@ int cnt = 1;
 
 int main()
 {   
-    scan();
+    scan_s();
     HDMI();
     main();
     return 0;
 }
 
-int scan()
+void scan_s()
 {   
     char option[10] = {0};
     printf("option :");
@@ -37,13 +39,13 @@ int scan()
     else if(strcmp(option, "output") == 0) {
         scanf("%d/n", &output);
         onoff[output-1] = 0;
-        num[input-1] = 0;
+        //num[input-1] = 0;
         cnt--;
     }
     if(cnt > 8){cnt = 1;}
 }
 
-int HDMI()
+void HDMI()
 {
     printf("--------------------------------------\n");
     printf(" out  %d  %d  %d  %d  %d  %d  %d  %d  \n",
@@ -52,6 +54,3 @@ int HDMI()
     1, onoff[0], onoff[1], onoff[2], onoff[3], onoff[4], onoff[5], onoff[6], onoff[7]);
     printf("--------------------------------------\n");
 }
-
-
-
